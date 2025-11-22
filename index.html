@@ -19,6 +19,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        color: white;
       }
       .container {
         display: flex;
@@ -38,6 +39,8 @@
         color: white;
         border: none;
         cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
       }
       .button:hover {
         background-color: rgb(14, 46, 143);
@@ -51,7 +54,7 @@
         color: white;
       }
       .neon-cart {
-        width: 80px; /* adjust size */
+        width: 80px;
         filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000)
           drop-shadow(0 0 20px #ff0000);
         animation: flicker 1.5s infinite;
@@ -92,52 +95,6 @@
         100% {
           opacity: 1;
           filter: drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 20px #ff0000);
-        }
-      }
-      .neon-text {
-        font-size: 50px;
-        font-weight: bold;
-        color: #ff0000;
-        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
-        animation: flicker-text 1.2s infinite;
-      }
-
-      @keyframes flicker-text {
-        0% {
-          opacity: 1;
-          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
-        }
-        8% {
-          opacity: 0.3;
-          text-shadow: 0 0 1px #ff0000, 0 0 3px #ff0000, 0 0 5px #ff0000;
-        }
-        15% {
-          opacity: 0.7;
-          text-shadow: 0 0 4px #ff0000, 0 0 8px #ff0000, 0 0 15px #ff0000;
-        }
-        25% {
-          opacity: 0.1;
-          text-shadow: 0 0 0 #ff0000, 0 0 0 #ff0000, 0 0 2px #ff0000;
-        }
-        40% {
-          opacity: 1;
-          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
-        }
-        55% {
-          opacity: 0.4;
-          text-shadow: 0 0 2px #ff0000, 0 0 5px #ff0000, 0 0 8px #ff0000;
-        }
-        70% {
-          opacity: 0.6;
-          text-shadow: 0 0 3px #ff0000, 0 0 7px #ff0000, 0 0 12px #ff0000;
-        }
-        85% {
-          opacity: 0.2;
-          text-shadow: 0 0 1px #ff0000, 0 0 2px #ff0000, 0 0 4px #ff0000;
-        }
-        100% {
-          opacity: 1;
-          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
         }
       }
     </style>
