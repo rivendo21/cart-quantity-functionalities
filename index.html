@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+        background-color: rgb(118, 127, 136);
+        background-image: url(j-lD-xTvjCgJo-unsplash.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px 100px;
+        background-color: #1c1c1c;
+        border-radius: 20px;
+        margin-right: 800px;
+      }
+      .button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: rgb(20, 111, 196);
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: rgb(14, 46, 143);
+      }
+      .button:active {
+        background-color: rgba(14, 46, 143, 0.342);
+      }
+      #cart-quantity {
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+      }
+      .neon-cart {
+        width: 80px; /* adjust size */
+        filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000)
+          drop-shadow(0 0 20px #ff0000);
+        animation: flicker 1.5s infinite;
+      }
+      @keyframes flicker {
+        0% {
+          opacity: 1;
+          filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000);
+        }
+        5% {
+          opacity: 0.2;
+          filter: drop-shadow(0 0 1px #ff0000) drop-shadow(0 0 3px #ff0000);
+        }
+        10% {
+          opacity: 0.8;
+          filter: drop-shadow(0 0 8px #ff0000) drop-shadow(0 0 15px #ff0000);
+        }
+        20% {
+          opacity: 0.1;
+          filter: drop-shadow(0 0 0 #ff0000) drop-shadow(0 0 2px #ff0000);
+        }
+        30% {
+          opacity: 1;
+          filter: drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 20px #ff0000);
+        }
+        50% {
+          opacity: 0.4;
+          filter: drop-shadow(0 0 3px #ff0000) drop-shadow(0 0 7px #ff0000);
+        }
+        70% {
+          opacity: 0.7;
+          filter: drop-shadow(0 0 6px #ff0000) drop-shadow(0 0 12px #ff0000);
+        }
+        80% {
+          opacity: 0.2;
+          filter: drop-shadow(0 0 1px #ff0000) drop-shadow(0 0 4px #ff0000);
+        }
+        100% {
+          opacity: 1;
+          filter: drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 20px #ff0000);
+        }
+      }
+      .neon-text {
+        font-size: 50px;
+        font-weight: bold;
+        color: #ff0000;
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+        animation: flicker-text 1.2s infinite;
+      }
+
+      @keyframes flicker-text {
+        0% {
+          opacity: 1;
+          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+        8% {
+          opacity: 0.3;
+          text-shadow: 0 0 1px #ff0000, 0 0 3px #ff0000, 0 0 5px #ff0000;
+        }
+        15% {
+          opacity: 0.7;
+          text-shadow: 0 0 4px #ff0000, 0 0 8px #ff0000, 0 0 15px #ff0000;
+        }
+        25% {
+          opacity: 0.1;
+          text-shadow: 0 0 0 #ff0000, 0 0 0 #ff0000, 0 0 2px #ff0000;
+        }
+        40% {
+          opacity: 1;
+          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+        55% {
+          opacity: 0.4;
+          text-shadow: 0 0 2px #ff0000, 0 0 5px #ff0000, 0 0 8px #ff0000;
+        }
+        70% {
+          opacity: 0.6;
+          text-shadow: 0 0 3px #ff0000, 0 0 7px #ff0000, 0 0 12px #ff0000;
+        }
+        85% {
+          opacity: 0.2;
+          text-shadow: 0 0 1px #ff0000, 0 0 2px #ff0000, 0 0 4px #ff0000;
+        }
+        100% {
+          opacity: 1;
+          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="cart.png" class="neon-cart" />
+      <h1 class="neon-text">Cart Quantity</h1>
+      <p id="cart-quantity">0</p>
+      <button
+        class="button"
+        id="add-to-cart"
+        onClick="cartQuantity++; document.getElementById('cart-quantity').innerHTML = cartQuantity"
+      >
+        Add to Cart
+      </button>
+      <button
+        class="button"
+        id="remove-from-cart"
+        onClick="if(cartQuantity>0){cartQuantity--}
+        else
+        {cartQuantity=0} document.getElementById('cart-quantity').innerHTML = cartQuantity"
+      >
+        Remove from Cart
+      </button>
+      <button
+        class="button"
+        onClick="cartQuantity=0; document.getElementById('cart-quantity').innerHTML = cartQuantity"
+      >
+        Reset Cart
+      </button>
+    </div>
+    <script>
+      let cartQuantity = null;
+      setInterval = null;
+    </script>
+  </body>
+</html>
